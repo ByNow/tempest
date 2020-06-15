@@ -3,37 +3,44 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.1.RELEASE</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <groupId>cn.bynow</groupId>
+        <artifactId>tempest</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath/>
     </parent>
     <groupId>cn.bynow</groupId>
     <artifactId>tempest-web</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tempest-web</name>
-    <description>Demo project for Spring Boot</description>
-
-    <properties>
-        <java.version>1.8</java.version>
-    </properties>
+    <description>管理系统web模块</description>
 
     <dependencies>
+        <!--其他模块的依赖-->
+        <dependency>
+            <groupId>cn.bynow</groupId>
+            <artifactId>tempest-asuka</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bynow</groupId>
+            <artifactId>tempest-kettle</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--其他jar-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 
@@ -42,7 +49,24 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- 没有该配置,devtools不生效 -->
+                    <fork>true</fork>
+                    <!-- 指定该Main Class为全局的唯一入口 -->
+                    <mainClass>cn.bynow.tempest.web.TempestWebApplication</mainClass>
+                </configuration>
+                <!--	<executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>可以把依赖的包都打包到生成的Jar包中
+                            </goals>
+                        </execution>
+                    </executions>-->
             </plugin>
+            <!-- 如果打包报没有web.xml,加上下面的插件 -->
+            <!--<plugin>
+                <artifactId>maven-war-plugin</artifactId>
+            </plugin>-->
         </plugins>
     </build>
 
