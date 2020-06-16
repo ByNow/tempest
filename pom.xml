@@ -18,7 +18,7 @@
 
     <modules>
         <module>tempest-asuka</module>
-        <module>tempest-kettle</module>
+        <module>tempest-executor</module>
         <module>tempest-web</module>
     </modules>
 

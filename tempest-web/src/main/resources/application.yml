@@ -1,0 +1,18 @@
+server:
+  port: 8090
+###################  spring≈‰÷√  ###################
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/tempest?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: root!
+    db-name: tempest
+    filters: log4j,wall,mergeStat
+
+
+
+
+
+

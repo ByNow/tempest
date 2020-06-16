@@ -6,7 +6,7 @@
         <groupId>cn.bynow</groupId>
         <artifactId>tempest</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>cn.bynow</groupId>
     <artifactId>tempest-web</artifactId>
@@ -21,15 +21,15 @@
             <artifactId>tempest-asuka</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>cn.bynow</groupId>
-            <artifactId>tempest-kettle</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!--其他jar-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
         <dependency>
@@ -47,26 +47,13 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- 没有该配置,devtools不生效 -->
-                    <fork>true</fork>
-                    <!-- 指定该Main Class为全局的唯一入口 -->
-                    <mainClass>cn.bynow.tempest.web.TempestWebApplication</mainClass>
-                </configuration>
-                <!--	<executions>
-                        <execution>
-                            <goals>
-                                <goal>repackage</goal>可以把依赖的包都打包到生成的Jar包中
-                            </goals>
-                        </execution>
-                    </executions>-->
             </plugin>
-            <!-- 如果打包报没有web.xml,加上下面的插件 -->
-            <!--<plugin>
-                <artifactId>maven-war-plugin</artifactId>
-            </plugin>-->
         </plugins>
     </build>
 

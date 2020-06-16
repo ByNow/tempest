@@ -6,12 +6,12 @@
         <groupId>cn.bynow</groupId>
         <artifactId>tempest</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/>
+        <relativePath>../pom.xml</relativePath>
     </parent>
     <groupId>cn.bynow</groupId>
-    <artifactId>tempest-kettle</artifactId>
+    <artifactId>tempest-executor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>tempest-kettle</name>
+    <name>tempest-executor</name>
     <description>Demo project for Spring Boot</description>
 
 
