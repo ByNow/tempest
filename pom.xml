@@ -37,6 +37,7 @@
         <commons.io.version>2.5</commons.io.version>
         <commons.configuration.version>1.10</commons.configuration.version>
         <fastjson.version>1.2.31</fastjson.version>
+        <beetl.version>2.7.15</beetl.version>
     </properties>
 
     <!--只是声明依赖方便统一版本号，并不实现引入，因此子项目需要显示的声明需要用的依赖,子类不用加version除非插件-->
@@ -97,6 +98,11 @@
             <artifactId>lombok</artifactId>
             <version>1.16.10</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ibeetl</groupId>
+            <artifactId>beetl</artifactId>
+            <version>${beetl.version}</version>
         </dependency>
     </dependencies>
 
