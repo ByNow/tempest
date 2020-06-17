@@ -20,8 +20,8 @@ public class BeetlConfig {
      * beetl的配置
      */
     @Bean(initMethod = "init")
-    public BeetlInitConfig beetlConfiguration() {
-        BeetlInitConfig beetlConfiguration = new BeetlInitConfig();
+    public BeetlExtraConfig beetlConfiguration() {
+        BeetlExtraConfig beetlConfiguration = new BeetlExtraConfig();
         beetlConfiguration.setResourceLoader(new ClasspathResourceLoader(BeetlConfig.class.getClassLoader(), beetlProperties.getPrefix()));
         beetlConfiguration.setConfigProperties(beetlProperties.getProperties());
         return beetlConfiguration;
