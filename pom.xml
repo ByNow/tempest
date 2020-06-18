@@ -38,6 +38,7 @@
         <commons.configuration.version>1.10</commons.configuration.version>
         <fastjson.version>1.2.31</fastjson.version>
         <beetl.version>2.7.15</beetl.version>
+        <shiro.version>1.4.0</shiro.version>
     </properties>
 
     <!--只是声明依赖方便统一版本号，并不实现引入，因此子项目需要显示的声明需要用的依赖,子类不用加version除非插件-->
@@ -79,6 +80,22 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>
+            </dependency>
+            <!--shiro依赖-->
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-core</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring</artifactId>
+                <version>${shiro.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-ehcache</artifactId>
+                <version>${shiro.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

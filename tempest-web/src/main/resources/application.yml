@@ -1,13 +1,11 @@
 server:
   port: 8090
-###################  beetl配置  ###################
 beetl:
-  delimiter-statement-start: \@   #开始结束标签(yaml不允许@开头)
+  delimiter-statement-start: \@
   delimiter-statement-end: null
-  resource-tagroot: common/tags   #自定义标签文件Root目录和后缀
+  resource-tagroot: common/tags
   resource-tagsuffix: tag
-  resource-auto-check: true #是否检测文件变化,开发用true合适，但线上要改为false
-###################  spring配置  ###################
+  resource-auto-check: true
 spring:
   mvc:
     static-path-pattern: /static/**
@@ -16,9 +14,14 @@ spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/tempest?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
-    password: root!
+    password: root
     db-name: tempest
     filters: log4j,wall,mergeStat
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
 
 
 
