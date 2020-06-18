@@ -18,10 +18,7 @@ spring:
     db-name: tempest
     filters: log4j,wall,mergeStat
 
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  configuration:
-    map-underscore-to-camel-case: true
+
 
 
 
