@@ -38,7 +38,7 @@
         <commons.configuration.version>1.10</commons.configuration.version>
         <fastjson.version>1.2.31</fastjson.version>
         <beetl.version>2.7.15</beetl.version>
-        <shiro.version>1.4.2</shiro.version>
+        <shiro.version>1.6.0</shiro.version>
     </properties>
 
     <!--只是声明依赖方便统一版本号，并不实现引入，因此子项目需要显示的声明需要用的依赖,子类不用加version除非插件-->
